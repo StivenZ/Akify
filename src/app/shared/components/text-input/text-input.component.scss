@@ -6,4 +6,8 @@
   outline: none;
   padding-left: 24px;
   padding-right: 24px;
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  font: normal 300 18px/21px "Roboto";
 }

@@ -10,6 +10,13 @@
     "noImplicitThis": true,
     "strict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ]
+  },
+  "include": [
+    "custom.d.ts"
+  ]
 }

@@ -1,10 +1,13 @@
+@import "./../../../variables.scss";
+// @import "variables.scss";
+
 .button-component {
   display: flex;
   align-items: center;
   justify-content: center;
 
   height: 56px;
-  background: #2176ff;
+  background: $primary-color;
   border-radius: 28px;
   padding-left: 28px;
   padding-right: 28px;

@@ -1,12 +1,11 @@
 import React from 'react';
 import './question-box.component.scss';
-import questionBoxImg from './question-box.svg';
+// import paperPlaneImg from './paper-plane.svg';
 
 const QuestionBox: React.FunctionComponent = () => {
     return (
         <div className="question-box-component">
-            <input type="text"/>
-            <img src={questionBoxImg} alt="Symbol"/>
+            <input type="text" className="input-text" />
         </div>
     );
 }

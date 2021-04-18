@@ -1,0 +1,24 @@
+@mixin flexCenterContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-box-component {
+    input {
+        // background-color: black;
+        height: 56px;
+        border-radius: 28px;
+        position: relative;
+        &::after {
+            content: "hellooooo";
+            // position: absolute;
+            right: 8px;
+            width: 40px;
+            height: 40px;
+            // background-image: url("./paper-plane.svg");
+            background-color: #2176FF;
+            // border-radius: 50%;
+        }
+    }
+}

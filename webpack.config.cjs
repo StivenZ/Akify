@@ -2,6 +2,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -16,8 +17,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.[cs][ac]?ss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', {
+          loader: "sass-loader",
+          options: {
+            sassOptions: {
+              indentWidth: 2,
+              includePaths: [path.resolve(__dirname, './app')],
+            },
+          },
+        }],
       },
       {
         test: /\.tsx?$/,
@@ -28,6 +37,10 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
 
@@ -35,7 +48,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
 
-  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' })],
+  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' }), new MiniCssExtractPlugin()],
 
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
